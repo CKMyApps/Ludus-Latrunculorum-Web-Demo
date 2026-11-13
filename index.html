@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#370d21">
+<meta name="description" content="Play one match of Latrunculi, a Roman strategy board game by CK My Apps.">
+<title>Ludus Latrunculorum | CK My Apps</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icons/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<link rel="stylesheet" href="./style.css">
+<script defer src="./engine.js"></script>
+<script defer src="./app.js"></script>
+</head>
+<body>
+<main>
+  <section id="menu" aria-labelledby="title">
+    <header class="hero">
+      <span class="eyebrow">CK MY APPS <span aria-hidden="true">◆</span> WEB DEMO</span>
+      <img class="eagle" src="./icons/eagle.png" alt="" width="250" height="133">
+      <h1 id="title">Ludus <span>Latrunculorum</span></h1>
+      <p>A Roman strategy board game</p>
+    </header>
+    <div class="menu-buttons">
+      <button class="primary" id="start"><span aria-hidden="true">▶</span> <span id="start-label">New Game</span></button>
+      <button data-full="Play Online">Play Online</button>
+      <button data-full="Load Game">Load Game</button>
+      <button data-full="Statistics">Statistics</button>
+      <button id="rules">How to Play</button>
+    </div>
+    <p class="hint" id="notice" role="status">One match against the computer.</p>
+  </section>
+  <section id="game" hidden aria-label="Latrunculi match">
+    <header class="game-header">
+      <button id="menu-back" class="small">‹ Menu</button>
+      <span class="eyebrow">LATRUNCULORUM</span>
+      <button class="small" id="game-rules">Rules</button>
+    </header>
+    <div class="turn"><strong id="status" role="status">Your turn</strong><span id="score"></span></div>
+    <div class="board-frame">
+      <div id="board" class="board" aria-label="8 by 8 game board"></div>
+      <div class="files" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span></div>
+    </div>
+    <p class="hint" id="move-hint">Select an ivory piece, then a marked square.</p>
+    <div id="outcome" class="outcome" hidden>
+      <h2 id="result" tabindex="-1"></h2>
+      <p id="reason"></p>
+      <a class="primary store" href="https://apps.apple.com/gr/app/ludus-latrunculorum/id6827040632?l=el">Get the game on the App Store ↗</a>
+    </div>
+  </section>
+</main>
+<dialog id="rules-dialog">
+  <h2>How to Play</h2>
+  <p>You command the ivory pieces. The pyramid is your Dux.</p>
+  <ul>
+    <li>Move any piece horizontally or vertically through empty squares.</li>
+    <li>Capture a soldier by moving to trap it between two of your pieces. At a corner, occupy both neighboring squares.</li>
+    <li>Win by blocking every path out for the opposing Dux. The edges and friendly pieces can also block it.</li>
+    <li>If a position repeats three times or the move limit is reached, the side with more soldiers wins. Equal counts give a draw.</li>
+  </ul>
+  <form method="dialog"><button class="primary">Got it</button></form>
+</dialog>
+</body>
+</html>

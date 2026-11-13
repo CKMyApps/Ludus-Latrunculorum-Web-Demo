@@ -1,0 +1,50 @@
+:root{color-scheme:dark;--gold:#ebc66b;--ink:#32101e;--paper:#fff4df;--muted:#e2bbcb;--line:#b78d574f;font-family:system-ui,sans-serif;background:#320c20;color:var(--paper)}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;min-height:100svh;background:radial-gradient(ellipse at 50% 0,#751c3b 0,transparent 62%),linear-gradient(150deg,#431129,#230915);display:grid;justify-items:center;padding:clamp(16px,5vh,46px) 14px 30px}
+main{width:min(100%,550px)}
+#menu{max-width:390px;margin:auto;text-align:center}
+.hero{margin-bottom:24px}
+.eyebrow{font-size:.68rem;letter-spacing:.19em;font-weight:750;color:var(--gold)}
+.eyebrow span{margin:0 .35rem}
+.eagle{display:block;width:min(64%,240px);height:auto;margin:22px auto 12px}
+h1,h2{font-family:Georgia,serif;margin:0}
+h1{color:var(--gold);font-size:clamp(2.55rem,8vw,3.8rem);line-height:.94;text-transform:uppercase;letter-spacing:.08em}
+h1 span{display:block;font-size:.43em;letter-spacing:.12em;margin-top:.55em}
+.hero p,.hint{color:var(--muted);font-size:.91rem}
+.menu-buttons{display:grid;gap:9px}
+button,.store{font:inherit;font-weight:730;border:1px solid #ffe9be30;border-radius:12px;min-height:45px;padding:10px 14px;background:#f6e8da;color:var(--ink);cursor:pointer}
+.primary{background:linear-gradient(145deg,#f5d784,#d8a945);color:#351421;border-color:#f5d784}
+button:hover,.store:hover{filter:brightness(1.08)}
+button:focus-visible,a:focus-visible,.square:focus-visible{outline:3px solid #fff4de;outline-offset:3px;z-index:1}
+.hint{min-height:1.4em;text-align:center;margin:13px 0}
+.game-header{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.small{background:#5e2541;color:var(--paper);border:1px solid #d5a4bd45;min-height:36px;font-size:.85rem;padding:5px 10px}
+.turn{display:flex;align-items:center;justify-content:space-between;gap:6px;margin:16px 0 9px;font-size:.9rem}
+.turn span{color:var(--muted)}
+.board-frame{padding:7px 7px 0;border-radius:10px;background:#6b382a;border:1px solid #ce9263;box-shadow:0 14px 32px #16050c91}
+.board{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));border:1px solid #603527;background:#9f644a}
+.square{display:grid;place-items:center;position:relative;aspect-ratio:1;min-height:0;border-radius:0;padding:0;border:1px solid #6d3d2c80;background:repeating-linear-gradient(128deg,#0000 0 4px,#ffd19d0b 5px 6px),linear-gradient(140deg,#c08662,#a86d50)}
+.square.alt{background:repeating-linear-gradient(128deg,#0000 0 4px,#ffd19d0b 5px 6px),linear-gradient(140deg,#b77a59,#9a5e46)}
+.square.last{box-shadow:inset 0 0 0 2px #ffdd8780}
+.square.selected{box-shadow:inset 0 0 0 3px #ffdf89}
+.square.legal::after{content:"";width:23%;aspect-ratio:1;border-radius:50%;background:#ffe3a8;box-shadow:0 0 0 2px #5c331f}
+.files{display:grid;grid-template-columns:repeat(8,1fr);text-align:center;padding:3px 0;color:#f3d5af;font: .68rem Georgia,serif}
+.piece{position:relative;width:72%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;box-shadow:0 3px 1px var(--rim),1px 5px 5px #21100490;background:radial-gradient(circle at 34% 24%,var(--lit),var(--face) 65%,var(--rim));pointer-events:none}
+.ivory{--lit:#ffffef;--face:#f0e1c7;--rim:#a79a83;--cross:#b8ac95;--side:#d9c9ae;--shade:#8f8068}
+.obsidian{--lit:#565459;--face:#252427;--rim:#100f12;--cross:#0f0e10;--side:#343138;--shade:#141217}
+.piece:not(.dux)::after{content:"";width:66%;height:66%;background:var(--cross);clip-path:polygon(40% 0,60% 0,60% 40%,100% 40%,100% 60%,60% 60%,60% 100%,40% 100%,40% 60%,0 60%,0 40%,40% 40%)}
+.dux{border-radius:2px;width:66%;display:block;background:var(--face)}
+.dux i{position:absolute;inset:0}
+.dux i:nth-child(1){clip-path:polygon(0 0,100% 0,50% 50%);background:var(--lit)}
+.dux i:nth-child(2){clip-path:polygon(100% 0,100% 100%,50% 50%);background:var(--side)}
+.dux i:nth-child(3){clip-path:polygon(0 100%,100% 100%,50% 50%);background:var(--shade)}
+.outcome{margin-top:16px;padding:18px;text-align:center;border-radius:14px;background:#541e37;border:1px solid var(--line)}
+.outcome h2{color:var(--gold)}
+.outcome p{font-size:.91rem;color:var(--muted)}
+.store{display:inline-block;text-decoration:none}
+dialog{width:min(440px,calc(100% - 24px));border:1px solid var(--line);border-radius:15px;background:#42142c;color:var(--paper);padding:22px}
+dialog::backdrop{background:#10050bd1}
+dialog h2{color:var(--gold)}
+dialog ul{padding-left:1.25rem}
+dialog li{margin-bottom:.55rem}
